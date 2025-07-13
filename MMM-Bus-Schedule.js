@@ -37,7 +37,7 @@ Module.register("MMM-Bus-Schedule", {
 			Promise.all([st]).then(data => {this.vars.stopTitle = data[0];});
 			let m = retrieveMinutes(jsonList, this.vars.minutes, this.vars.maxDisplay);
 			Promise.all([m]).then(data => {this.vars.minutes = data[0]; }).catch(error => Log.log("Nothing to retrieve"));
-		}, 2000);
+		}, 10000);
 	},
 	getStyles: function() {
 		return ['scripts.css', 'font-awesome.css'];
@@ -48,7 +48,8 @@ Module.register("MMM-Bus-Schedule", {
 	getDom: function () {
 		const wrapper = document.createElement("div");
 		if(this.vars.routeTitle == "") {
-			wrapper.innerHTML = "Initiating Bus Schedule";
+			wrapper.innerHTML = "Initiating Bus Schedule typically takes up to 10 seconds";
+			wrapper.id = "loading";
 			return wrapper;
 		}
 		const innerHeaderBox = document.createElement("div");
