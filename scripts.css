@@ -23,3 +23,21 @@
 		opacity: 0.7;
 	}
 }
+
+.arrivals{
+	box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+	transform: scale(1);
+	animation: colourChange 3s infinite;
+}
+
+@keyframes colourChange {
+	0% {
+		color: #FF7F50;
+	}
+	50% {
+		color: #B8860B;
+	}
+	100%{
+		color: #FF7F50;
+	}
+}
