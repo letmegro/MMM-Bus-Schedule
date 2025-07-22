@@ -25,7 +25,7 @@ Module.register("MMM-Bus-Schedule", {
 			routeTitle: "",
 			stopTitle: "",
 		},
-		url: "modules/MMM-Bus-Schedule/images/bus.png",
+		url: "/modules/MMM-Bus-Schedule/images/bus.png",
 	},
 	start: function() {
 		let jsonList = {};
@@ -90,15 +90,14 @@ Module.register("MMM-Bus-Schedule", {
 		
 		//hold arrival times
 		const arrivals1 = document.createElement("div");
-		arrivals1.id = "arrivals";
 		try{
 			this.vars.stopInfoOne.minutes.forEach(arrival => {
 				const time = document.createElement("div");
 				var image = document.createElement("img");
 				image.src = this.vars.url;
 				image.className = "bus";
-				time.appendChild(image);
 				time.innerHTML = arrival + " Minutes";
+				time.appendChild(image);
 				time.className = "arrivals";
 				arrivals1.appendChild(time);
 			});
@@ -107,10 +106,11 @@ Module.register("MMM-Bus-Schedule", {
 			arrivals1.id = "";
 			arrivals1.innerHTML = "No arrival times available.";
 		};
+
+		arrivals1.className = "segmented-boxes";
 		innerBody1.appendChild(innerHeaderBox1);
 		innerBody1.appendChild(stopName1);
 		innerBody1.appendChild(arrivals1);
-		innerBody1.className = "segmented-Boxes";
 		//end of info one segment box-------------------------------------------
 
 		//start of segment 2----------------------------------------------------
@@ -122,15 +122,14 @@ Module.register("MMM-Bus-Schedule", {
 		stopName2.innerHTML = this.vars.stopInfoTwo.stopTitle + "\nArrivals:\n";
 		//hold arrival times
 		const arrivals2 = document.createElement("div");
-		arrivals2.id = "arrivals";
 		try{
 			this.vars.stopInfoTwo.minutes.forEach(arrival => {
 				const time = document.createElement("div");
 				var image = document.createElement("img");
 				image.src = this.vars.url;
 				image.className = "bus";
-				time.appendChild(image);
 				time.innerHTML = arrival + " Minutes";
+				time.appendChild(image);
 				time.className = "arrivals";
 				arrivals2.appendChild(time);
 			});
@@ -139,10 +138,11 @@ Module.register("MMM-Bus-Schedule", {
 			arrivals2.id = "";
 			arrivals2.innerHTML = "No arrival times available.";
 		};
+		arrivals2.className = "segmented-boxes";
 		innerBody2.appendChild(innerHeaderBox2);
 		innerBody2.appendChild(stopName2);
 		innerBody2.appendChild(arrivals2);
-		innerBody2.className = "segmented-Boxes";
+		
 		//end of segment 2 ------------------------------------------------------
 
 		wrapper.appendChild(innerBody1);
