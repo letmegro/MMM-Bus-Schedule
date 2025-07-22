@@ -8,6 +8,7 @@ Supported by [MyNextBus](https://sms-web.nextbus.com/) webservice API
    - cd `~/.[Your magic mirror main folder]` &rarr; `cd Modules`
    - `git clone https://github.com/letmegro/MMM-Bus-Schedule.git`
 2. Enjoy!
+The update frequency is every 10 seconds
+This module was tested in Toronto with tram and bus lines the API does support a variety of other agencies and lines (to be provided).
 
-You can customize this module in anyways shape or form you'd like however the API is intended<br> to be called once every 10 seconds
 Please note that this READ ME and the rest of the module will be updated as time as the physical mirror will be assembled
